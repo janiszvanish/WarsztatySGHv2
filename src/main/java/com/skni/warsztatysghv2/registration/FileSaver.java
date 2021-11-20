@@ -12,11 +12,14 @@ public class FileSaver {
 
     public void saveToFile(Student student) throws IOException {
         counter++;
-        String path = "D:\\studia\\2021-2022\\zimowy\\SPRING\\spotkanie2\\WarsztatySGHv2\\src\\main\\java\\com\\skni\\warsztatysghv2\\student" + counter + ".txt";;
-        File file = new File(path);
-        file.createNewFile();
+        String path = "students";
+        File studentsDir = new File(path);
+        studentsDir.mkdir();
+        String fileName = "student" + counter + ".txt";
 
-        FileWriter writer = new FileWriter(file);
+        File studentFile = new File(studentsDir.getPath() + "/" + fileName);
+        studentFile.createNewFile();
+        FileWriter writer = new FileWriter(studentFile);
         writer.write(student.toString());
         writer.close();
 
