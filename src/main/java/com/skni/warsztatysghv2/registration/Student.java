@@ -1,5 +1,6 @@
 package com.skni.warsztatysghv2.registration;
 
+
 public class Student {
 
     private final String id;

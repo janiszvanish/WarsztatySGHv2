@@ -1,0 +1,1 @@
+Student{id='2c92ea1d-3393-487d-bba1-38bb4b71af78', firstName='Mikolaj', lastName='Zimkowski', status=REGISTERED}

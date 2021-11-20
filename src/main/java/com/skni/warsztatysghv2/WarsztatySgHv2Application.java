@@ -8,6 +8,11 @@ import org.springframework.context.event.EventListener;
 
 @SpringBootApplication
 public class WarsztatySgHv2Application {
+    private final StudentService studentService;
+
+    public WarsztatySgHv2Application(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(WarsztatySgHv2Application.class, args);
@@ -15,7 +20,7 @@ public class WarsztatySgHv2Application {
 
     @EventListener(ApplicationReadyEvent.class)
     public void doAfterStartup() {
-        new StudentService().printStudent();
+        studentService.printStudent();
     }
 
 }
